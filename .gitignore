@@ -85,3 +85,8 @@ LocalPackages/
 
 # Build products
 BuildSupport/products/
+
+
+# Claude
+.claude/settings.local.json
+.remember/
