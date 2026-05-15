@@ -6,6 +6,13 @@ and this library adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Unreleased
 
+## Changed
+- Bumped `zcash_voting` to `0.8.1` for the pre-launch voting SQLite schema
+  reset, crate-owned recovery store missing-row errors, required voting input
+  validation, paginated vote commitment tree sync responses with per-block
+  roots, and shared Orchard note conversion. Updated hotkey generation APIs to
+  drop the unused round ID.
+
 # 2.5.0 - 2026-05-11
 
 ## Added
@@ -68,7 +75,7 @@ and this library adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `addSentServers(roundId:bundleIndex:proposalId:shareIndex:newURLs:)` → `zcashlc_voting_add_sent_servers`
 
   Delegation workflow
-  - `generateHotkey(roundId:seed:)` → `zcashlc_voting_generate_hotkey` (frees `FfiVotingHotkey` via `zcashlc_voting_free_hotkey`)
+  - `generateHotkey(seed:)` → `zcashlc_voting_generate_hotkey` (frees `FfiVotingHotkey` via `zcashlc_voting_free_hotkey`)
   - `setupBundles(roundId:notes:)` → `zcashlc_voting_setup_bundles` (frees `FfiBundleSetupResult` via `zcashlc_voting_free_bundle_setup_result`)
   - `getBundleCount(roundId:)` → `zcashlc_voting_get_bundle_count`
   - `buildPczt(_:)` → `zcashlc_voting_build_pczt` (takes `VotingBuildPcztParams`)
